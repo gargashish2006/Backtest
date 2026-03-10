@@ -1,0 +1,111 @@
+
+MANUAL VERIFICATION STEPS:
+
+REBALANCE #1 (2017-04-28) - INITIAL PORTFOLIO CREATION
+========================================================
+
+Starting Position:
+  - Cash: ₹10,000,000.00
+  - Holdings: 0 stocks
+  - Total Portfolio: ₹10,000,000.00
+
+10 BUY Orders Executed:
+  Stock             Qty    Price       Gross Value   Trans(0.2%)  Impact(1%)   Total Cost
+  -------------------------------------------------------------------------------
+  INDIANB          3096    ₹319.10     ₹987,933.62   ₹1,975.87    ₹9,879.34    ₹999,788.82
+  SUNTV            1072    ₹921.75     ₹988,116.00   ₹1,976.23    ₹9,881.16    ₹999,973.39
+  BAJAJFINSV       2159    ₹457.57     ₹987,893.65   ₹1,975.79    ₹9,878.94    ₹999,748.37
+  VEDL             4057    ₹243.55     ₹988,082.36   ₹1,976.16    ₹9,880.82    ₹999,939.35
+  REC LIMITED      6501    ₹151.99     ₹988,087.03   ₹1,976.17    ₹9,880.87    ₹999,944.07
+  IOC              6736    ₹146.68     ₹988,036.43   ₹1,976.07    ₹9,880.36    ₹999,892.87
+  HINDALCO         4956    ₹199.35     ₹987,978.63   ₹1,975.96    ₹9,879.79    ₹999,834.37
+  BANKINDIA        5289    ₹186.80     ₹987,985.22   ₹1,975.97    ₹9,879.85    ₹999,841.04
+  MRF                14    ₹67,909.20  ₹950,728.84   ₹1,901.46    ₹9,507.29    ₹962,137.59
+  PNB              5850    ₹168.90     ₹988,064.96   ₹1,976.13    ₹9,880.65    ₹999,921.74
+  -------------------------------------------------------------------------------
+  TOTAL:              10                ₹9,842,906.74 ₹19,685.81   ₹98,429.07   ₹9,961,021.62
+
+Calculation Verification:
+  1. Total Gross Value = Sum of (Qty × Price) = ₹9,842,906.74 ✓
+  2. Transaction Cost = 0.2% of Gross = ₹19,685.81 ✓
+  3. Impact Cost = 1.0% of Gross = ₹98,429.07 ✓
+  4. Total Cost = Gross + Trans + Impact = ₹9,961,021.62 ✓
+  5. Cash Used = ₹9,961,021.62
+  6. Remaining Cash = ₹10,000,000 - ₹9,961,021.62 = ₹38,978.38 ✓
+
+Ending Position:
+  - Cash: ₹38,978.38 ✓
+  - Holdings Value: ₹9,842,906.74 (at purchase prices)
+  - Total Portfolio: ₹9,881,885.12 (actual market value at EOD)
+  - Number of Positions: 10 ✓
+
+
+REBALANCE #2 (2017-07-31) - PORTFOLIO REBALANCING
+====================================================
+
+Starting Position:
+  - Cash: ₹38,978.38
+  - Holdings Value: ₹9,493,453.85
+  - Total Portfolio: ₹9,532,432.23
+
+9 SELL Orders Executed:
+  Stock             Qty    Price       Gross Value   Trans(0.2%)  Impact(1%)   Net Proceeds  Gain/Loss    Tax
+  -------------------------------------------------------------------------------------------------------
+  REC LIMITED      6501    ₹131.29     ₹853,516.25   ₹1,707.03    ₹8,535.16    ₹843,274.05   -₹134,570.78 ₹0.00
+  IOC              6736    ₹122.55     ₹825,496.82   ₹1,650.99    ₹8,254.97    ₹815,590.86   -₹162,539.61 ₹0.00
+  HINDALCO         4956    ₹219.65   ₹1,088,585.37   ₹2,177.17   ₹10,885.85  ₹1,075,522.35    ₹100,606.74 ₹20,121.35
+  BANKINDIA        5289    ₹166.00     ₹877,974.00   ₹1,755.95    ₹8,779.74    ₹867,438.31   -₹110,011.22 ₹0.00
+  PNB              5850    ₹162.20     ₹948,869.98   ₹1,897.74    ₹9,488.70    ₹937,483.54    -₹39,194.98 ₹0.00
+  INDIANB            62    ₹313.35      ₹19,427.70      ₹38.86      ₹194.28     ₹19,194.57       -₹356.50 ₹0.00
+  MRF                 1    ₹69,198.75   ₹69,198.75     ₹138.40      ₹691.99     ₹68,368.36      ₹1,289.55 ₹257.91
+  BAJAJFINSV        255    ₹499.18     ₹127,290.90     ₹254.58    ₹1,272.91    ₹125,763.41     ₹10,610.55 ₹2,122.11
+  VEDL              660    ₹279.85     ₹184,701.00     ₹369.40    ₹1,847.01    ₹182,484.59     ₹23,958.00 ₹4,791.60
+  -------------------------------------------------------------------------------------------------------
+  TOTAL:              9                ₹4,995,060.77   ₹9,990.12   ₹49,950.61  ₹4,935,120.04  -₹310,208.25 ₹27,292.97
+
+Tax Calculation Verification:
+  - HINDALCO: Gain = ₹100,606.74, Held 94 days (short-term), Tax = 20% = ₹20,121.35 ✓
+  - MRF: Gain = ₹1,289.55, Held 94 days (short-term), Tax = 20% = ₹257.91 ✓
+  - BAJAJFINSV: Gain = ₹10,610.55, Held 94 days (short-term), Tax = 20% = ₹2,122.11 ✓
+  - VEDL: Gain = ₹23,958.00, Held 94 days (short-term), Tax = 20% = ₹4,791.60 ✓
+  - Losses: No tax on losses (REC, IOC, BANKINDIA, PNB, INDIANB) ✓
+
+Cash from Sells = Net Proceeds - Tax = ₹4,935,120.04 - ₹27,292.97 = ₹4,907,827.08 ✓
+
+6 BUY Orders Executed:
+  Stock             Qty    Price       Gross Value   Trans(0.2%)  Impact(1%)   Total Cost
+  -----------------------------------------------------------------------------------------
+  EMBASSY DEV      4188    ₹227.00     ₹950,676.00   ₹1,901.35    ₹9,506.76    ₹962,084.11
+  LTF              5433    ₹175.00     ₹950,775.00   ₹1,901.55    ₹9,507.75    ₹962,184.30
+  BAJFINANCE       5582    ₹170.31     ₹950,670.41   ₹1,901.34    ₹9,506.70    ₹962,078.45
+  SUNTV             146    ₹780.35     ₹113,931.10     ₹227.86    ₹1,139.31    ₹115,298.27
+  ADANIPORTS       2401    ₹395.90     ₹950,555.89   ₹1,901.11    ₹9,505.56    ₹961,962.56
+  MARUTI            102    ₹7,750.05   ₹790,505.08   ₹1,581.01    ₹7,905.05    ₹799,991.14
+  -----------------------------------------------------------------------------------------
+  TOTAL:              6                ₹4,707,113.47   ₹9,414.23   ₹47,071.13  ₹4,763,598.83
+
+Cash Reconciliation:
+  Starting Cash:           ₹38,978.38
+  + Cash from Sells:    ₹4,907,827.08
+  - Cash for Buys:      ₹4,763,598.83
+  = Ending Cash:          ₹183,206.63 ✓
+
+Ending Position:
+  - Cash: ₹183,206.63 ✓
+  - Holdings Value: ₹9,295,025.49
+  - Total Portfolio: ₹9,478,232.11
+  - Number of Positions: 10 ✓
+
+
+KEY FORMULAS:
+=============
+1. Gross Value = Quantity × Price
+2. Transaction Cost = Gross Value × 0.2%
+3. Impact Cost = Gross Value × 1.0%
+4. Total Buy Cost = Gross Value + Transaction Cost + Impact Cost
+5. Net Sell Proceeds = Gross Value - Transaction Cost - Impact Cost
+6. Gain/Loss = Sell Gross Value - Buy Cost Basis
+7. Tax (Short-term) = Max(Gain, 0) × 20% (if held < 365 days)
+8. Tax (Long-term) = Max(Gain, 0) × 12.5% (if held ≥ 365 days)
+9. Cash After Sells = Net Proceeds - Tax
+10. Portfolio Value = Cash + Sum(Holdings Value)

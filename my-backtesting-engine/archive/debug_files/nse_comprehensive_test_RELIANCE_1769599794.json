@@ -1,0 +1,226 @@
+[
+  {
+    "endpoint": "quote-equity",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Basic quote data",
+    "status": 200,
+    "success": true,
+    "data_type": "dict",
+    "keys": [
+      "info",
+      "metadata",
+      "securityInfo",
+      "sddDetails",
+      "currentMarketType",
+      "priceInfo",
+      "industryInfo",
+      "preOpenMarket"
+    ]
+  },
+  {
+    "endpoint": "quote-derivative",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Derivative quote",
+    "status": 200,
+    "success": true,
+    "data_type": "dict",
+    "keys": [
+      "info",
+      "underlyingValue",
+      "vfq",
+      "fut_timestamp",
+      "opt_timestamp",
+      "stocks",
+      "strikePrices",
+      "expiryDates",
+      "allSymbol",
+      "underlyingInfo",
+      "expiryDatesByInstrument"
+    ]
+  },
+  {
+    "endpoint": "quote-meta",
+    "params": {
+      "symbol": "RELIANCE",
+      "type": "equity"
+    },
+    "description": "Quote metadata",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "corporates-corporateActions",
+    "params": {
+      "symbol": "RELIANCE",
+      "index": "equities"
+    },
+    "description": "Corporate actions",
+    "status": 200,
+    "success": true,
+    "data_type": "list",
+    "keys": null
+  },
+  {
+    "endpoint": "corporate-announcements",
+    "params": {
+      "symbol": "RELIANCE",
+      "index": "equities"
+    },
+    "description": "Announcements",
+    "status": 200,
+    "success": true,
+    "data_type": "list",
+    "keys": null,
+    "shareholding_keywords": [
+      "promoter",
+      "shareholding",
+      "holding pattern",
+      "dii"
+    ],
+    "has_shareholding_data": true
+  },
+  {
+    "endpoint": "corporate-info",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Corporate info",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "chart-databyindex",
+    "params": {
+      "index": "RELIANCE",
+      "indices": "false"
+    },
+    "description": "Chart data",
+    "status": 200,
+    "success": true,
+    "data_type": "dict",
+    "keys": [
+      "identifier",
+      "name",
+      "grapthData",
+      "closePrice"
+    ]
+  },
+  {
+    "endpoint": "chart-databyindex",
+    "params": {
+      "index": "RELIANCE",
+      "indices": "true"
+    },
+    "description": "Chart data (indices mode)",
+    "status": 200,
+    "success": true,
+    "data_type": "dict",
+    "keys": [
+      "identifier",
+      "name",
+      "grapthData",
+      "closePrice"
+    ]
+  },
+  {
+    "endpoint": "company-master",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Company master",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "companyMaster",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Company master (alt)",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "company-info",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Company detailed info",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "shareholding-pattern",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Shareholding pattern",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "shareholding",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Shareholding",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "corporate-shareholding",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Corporate shareholding",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "equity-shareholding",
+    "params": {
+      "symbol": "RELIANCE"
+    },
+    "description": "Equity shareholding",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "historical/cm/equity",
+    "params": {
+      "symbol": "RELIANCE",
+      "series": "[\"EQ\"]"
+    },
+    "description": "Historical equity",
+    "status": 404,
+    "success": false,
+    "error": "HTTP 404"
+  },
+  {
+    "endpoint": "marketStatus",
+    "params": {},
+    "description": "Market status (might have references)",
+    "status": 200,
+    "success": true,
+    "data_type": "dict",
+    "keys": [
+      "marketState",
+      "marketcap",
+      "indicativenifty50",
+      "giftnifty"
+    ]
+  }
+]

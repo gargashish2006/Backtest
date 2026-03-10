@@ -1,10 +1,11 @@
 # Standard Python
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 env/
+venv/
 build/
 develop-eggs/
 dist/
@@ -36,18 +37,18 @@ coverage.xml
 Thumbs.db
 
 # Project Specific Data - EXCLUDE LARGE REDUNDANT FILES
-database/price_data.csv
-database/*_backup_*.parquet
-database/shareholding_patterns_backup_*.csv
-database/shareholding_patterns_backup_*.parquet
-database/price_data_cleaned.parquet
+**/database/price_data.csv
+**/database/price_data_cleaned.parquet
+**/database/*_backup_*.parquet
+**/database/shareholding_patterns_backup_*.csv
+**/database/shareholding_patterns_backup_*.parquet
 
-# Ignore CSVs that have parquet equivalents or are temporary
-database/*.csv
-temp_*.csv
-dhan_price_comparison.xlsx
-*Comparison_Report.xlsx
-~$*.xlsx
+# Ignore all CSVs that have parquet equivalents or are temporary
+**/database/*.csv
+**/temp_*.csv
+**/dhan_price_comparison.xlsx
+**/*Comparison_Report.xlsx
+**/~$*.xlsx
 
 # Logs
 *.log

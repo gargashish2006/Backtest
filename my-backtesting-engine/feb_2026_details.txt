@@ -1,0 +1,42 @@
+Loading price data from /Users/shubhrakasana/Desktop/oleander/olgo_mobile/repos/Backtest/precision-backtest-engine/database/price_data.parquet...
+Loaded 7105900 rows of data.
+Pre-computing Weekly RSI Cache (Vectorized)...
+RSI Cache Benchmark Complete.
+Analyzing Selection for 2026-02-15...
+
+Calculation Date: 2026-02-05
+Lookback Start : 2025-02-05
+
+====================================================================================================
+Industry                            | Group                          | Grp Score  | Ind Score  | RSNP  
+----------------------------------------------------------------------------------------------------
+Life Insurance                      | Insurance                      |      75.0% |      60.0% |   1.00
+Private Sector Bank                 | Banks                          |      75.6% |      80.0% |   0.90
+Trading - Minerals                  | Metals & Minerals Trading      |      61.5% |      66.7% |   0.67
+Integrated Power Utilities          | Power                          |      55.3% |      66.7% |   0.67
+Tractors                            | Agricultural, Commercial & Construction Vehicles |      55.6% |     100.0% |   0.67
+Public Sector Bank                  | Banks                          |      75.6% |      58.3% |   0.67
+Commercial Vehicles                 | Agricultural, Commercial & Construction Vehicles |      55.6% |      66.7% |   0.67
+Iron & Steel                        | Ferrous Metals                 |      77.8% |      84.6% |   0.64
+Aluminium, Copper & Zinc Products   | Industrial Products            |      58.0% |      63.6% |   0.62
+Sponge Iron                         | Ferrous Metals                 |      77.8% |      80.0% |   0.60
+Oil Exploration & Production        | Oil                            |      58.8% |      66.7% |   0.60
+Ferro & Silica Manganese            | Ferrous Metals                 |      77.8% |      62.5% |   0.56
+Auto Components & Equipments        | Auto Components                |      59.4% |      62.1% |   0.54
+Refineries & Marketing              | Petroleum Products             |      64.7% |      70.0% |   0.50
+General Insurance                   | Insurance                      |      75.0% |      83.3% |   0.50
+Animal Feed                         | Food Products                  |      72.1% |      66.7% |   0.50
+Compressors, Pumps & Diesel Engines | Industrial Products            |      58.0% |      50.0% |   0.50
+Seafood                             | Food Products                  |      72.1% |      75.0% |   0.50
+Power Distribution                  | Power                          |      55.3% |      50.0% |   0.50
+Sanitary Ware                       | Consumer Durables              |      57.8% |     100.0% |   0.50
+Other Food Products                 | Food Products                  |      72.1% |      64.7% |   0.47
+Cables - Electricals                | Industrial Products            |      58.0% |      66.7% |   0.46
+Leather And Leather Products        | Consumer Durables              |      57.8% |      54.5% |   0.45
+Paints                              | Consumer Durables              |      57.8% |      62.5% |   0.44
+Dairy Products                      | Food Products                  |      72.1% |      75.0% |   0.43
+Cement & Cement Products            | Cement & Cement Products       |      67.5% |      67.5% |   0.40
+Meat Products including Poultry     | Food Products                  |      72.1% |     100.0% |   0.40
+Diversified FMCG                    | Diversified FMCG               |      80.0% |      80.0% |   0.40
+Electronic Media                    | Media                          |      70.0% |      80.0% |   0.40
+====================================================================================================

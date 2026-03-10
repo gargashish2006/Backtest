@@ -1,0 +1,155 @@
+Loading price data from /Users/shubhrakasana/Desktop/oleander/olgo_mobile/repos/Backtest/precision-backtest-engine/database/price_data.parquet...
+Loaded 7105900 rows of data.
+Pre-computing Weekly RSI Cache (Vectorized)...
+RSI Cache Benchmark Complete.
+
+####################################################################################################
+ANALYSIS FOR REBALANCE DATE: 2020-02-15
+####################################################################################################
+
+Calculation Date: 2020-02-07
+Lookback Start : 2019-02-07
+
+Industry                            | Group                          | Grp Score  | Ind Score  | RSNP  
+----------------------------------------------------------------------------------------------------
+Printing Inks                       | Chemicals & Petrochemicals     |      76.0% |     100.0% |   1.00
+Power Distribution                  | Power                          |      68.6% |      50.0% |   1.00
+Power - Transmission                | Power                          |      68.6% |     100.0% |   1.00
+Depositories, Clearing Houses and Other Intermediaries | Capital Markets                |      76.7% |     100.0% |   1.00
+Life Insurance                      | Insurance                      |      71.4% |      75.0% |   1.00
+Exchange and Data Platform          | Capital Markets                |      76.7% |     100.0% |   1.00
+Industrial Gases                    | Chemicals & Petrochemicals     |      76.0% |      50.0% |   0.75
+Cigarettes & Tobacco Products       | Cigarettes & Tobacco Products  |      83.3% |      83.3% |   0.75
+Explosives                          | Chemicals & Petrochemicals     |      76.0% |      75.0% |   0.75
+Aerospace & Defense                 | Aerospace & Defense            |      71.4% |      71.4% |   0.73
+Hospital                            | Healthcare Services            |      67.6% |      76.9% |   0.67
+Distributors                        | Retailing                      |      73.1% |      60.0% |   0.67
+Internet & Catalogue Retail         | Retailing                      |      73.1% |      66.7% |   0.67
+General Insurance                   | Insurance                      |      71.4% |      66.7% |   0.67
+Sugar                               | Agricultural Food & other Products |      73.0% |      82.4% |   0.58
+Speciality Retail                   | Retailing                      |      73.1% |      80.0% |   0.57
+Abrasives & Bearings                | Industrial Products            |      75.7% |      85.7% |   0.57
+Integrated Power Utilities          | Power                          |      68.6% |      83.3% |   0.50
+Electrodes & Refractories           | Industrial Products            |      75.7% |      63.6% |   0.50
+Asset Management Company            | Capital Markets                |      76.7% |      50.0% |   0.50
+Ratings                             | Capital Markets                |      76.7% |     100.0% |   0.50
+Refineries & Marketing              | Petroleum Products             |      75.0% |      80.0% |   0.50
+Ship Building & Allied Services     | Industrial Manufacturing       |      72.4% |     100.0% |   0.50
+Heavy Electrical Equipment          | Electrical Equipment           |      83.6% |      84.0% |   0.48
+Specialty Chemicals                 | Chemicals & Petrochemicals     |      76.0% |      74.3% |   0.47
+Petrochemicals                      | Chemicals & Petrochemicals     |      76.0% |      84.6% |   0.45
+Castings & Forgings                 | Industrial Products            |      75.7% |      69.2% |   0.45
+Compressors, Pumps & Diesel Engines | Industrial Products            |      75.7% |      66.7% |   0.44
+Dyes And Pigments                   | Chemicals & Petrochemicals     |      76.0% |      80.0% |   0.40
+Medical Equipment & Supplies        | Healthcare Equipment & Supplies |      83.3% |      83.3% |   0.40
+Offshore Support Solution Drilling  | Oil                            |      76.9% |     100.0% |   0.40
+
+
+
+####################################################################################################
+ANALYSIS FOR REBALANCE DATE: 2020-05-15
+####################################################################################################
+
+Calculation Date: 2020-05-08
+Lookback Start : 2019-05-09
+
+Industry                            | Group                          | Grp Score  | Ind Score  | RSNP  
+----------------------------------------------------------------------------------------------------
+Web based media and service         | Media                          |      64.7% |     100.0% |   1.00
+Industrial Gases                    | Chemicals & Petrochemicals     |      67.9% |      75.0% |   1.00
+Tractors                            | Agricultural, Commercial & Construction Vehicles |      66.7% |     100.0% |   1.00
+Printing Inks                       | Chemicals & Petrochemicals     |      67.9% |     100.0% |   1.00
+Power Distribution                  | Power                          |      59.5% |      50.0% |   1.00
+Power - Transmission                | Power                          |      59.5% |     100.0% |   1.00
+Pharmaceuticals                     | Pharmaceuticals & Biotechnology |      63.1% |      63.9% |   0.75
+Edible Oil                          | Agricultural Food & other Products |      64.9% |      69.6% |   0.72
+Abrasives & Bearings                | Industrial Products            |      67.6% |      57.1% |   0.71
+Aluminium, Copper & Zinc Products   | Industrial Products            |      67.6% |      54.5% |   0.70
+Exchange and Data Platform          | Capital Markets                |      66.7% |     100.0% |   0.67
+Shipping                            | Transport Services             |      68.5% |      88.9% |   0.67
+Road Transport                      | Transport Services             |      68.5% |      66.7% |   0.67
+Specialty Chemicals                 | Chemicals & Petrochemicals     |      67.9% |      61.5% |   0.65
+Fertilizers                         | Fertilizers & Agrochemicals    |      58.5% |      61.9% |   0.56
+Aerospace & Defense                 | Aerospace & Defense            |      71.4% |      71.4% |   0.55
+Explosives                          | Chemicals & Petrochemicals     |      67.9% |     100.0% |   0.50
+Port & Port services                | Transport Infrastructure       |      77.8% |      75.0% |   0.50
+Trading - Chemicals                 | Chemicals & Petrochemicals     |      67.9% |      66.7% |   0.50
+Real Estate related services        | Realty                         |      67.9% |      60.0% |   0.50
+Ratings                             | Capital Markets                |      66.7% |      50.0% |   0.50
+Asset Management Company            | Capital Markets                |      66.7% |      50.0% |   0.50
+Castings & Forgings                 | Industrial Products            |      67.6% |      75.0% |   0.50
+Dyes And Pigments                   | Chemicals & Petrochemicals     |      67.9% |      70.0% |   0.50
+Pesticides & Agrochemicals          | Fertilizers & Agrochemicals    |      58.5% |      55.0% |   0.50
+Advertising & Media Agencies        | Media                          |      64.7% |      80.0% |   0.50
+Other Industrial Products           | Industrial Products            |      67.6% |      55.0% |   0.50
+Other Capital Market related Services | Capital Markets                |      66.7% |      75.0% |   0.50
+Medical Equipment & Supplies        | Healthcare Equipment & Supplies |      66.7% |      66.7% |   0.50
+Integrated Power Utilities          | Power                          |      59.5% |      50.0% |   0.50
+Tea & Coffee                        | Agricultural Food & other Products |      64.9% |      64.0% |   0.48
+Plastic Products - Industrial       | Industrial Products            |      67.6% |      79.6% |   0.47
+Industrial Minerals                 | Minerals & Mining              |      85.7% |      85.7% |   0.46
+Stockbroking & Allied               | Capital Markets                |      66.7% |      67.7% |   0.45
+Packaging                           | Industrial Products            |      67.6% |      77.0% |   0.44
+Tyres & Rubber Products             | Auto Components                |      66.9% |      62.5% |   0.43
+Garments & Apparels                 | Textiles & Apparels            |      72.0% |      63.9% |   0.42
+Logistics Solution Provider         | Transport Services             |      68.5% |      64.7% |   0.41
+Trading - Textile Products          | Textiles & Apparels            |      72.0% |      50.0% |   0.40
+
+
+
+####################################################################################################
+ANALYSIS FOR REBALANCE DATE: 2024-02-15
+####################################################################################################
+
+Calculation Date: 2024-02-08
+Lookback Start : 2023-02-08
+
+Industry                            | Group                          | Grp Score  | Ind Score  | RSNP  
+----------------------------------------------------------------------------------------------------
+Water Supply & Management           | Other Utilities                |      50.0% |      66.7% |   1.00
+Pig Iron                            | Ferrous Metals                 |      50.0% |     100.0% |   1.00
+Financial Technology (Fintech)      | Financial Technology (Fintech) |      50.0% |      50.0% |   0.83
+Other Capital Market related Services | Capital Markets                |      49.1% |      75.0% |   0.75
+2/3 Wheelers                        | Automobiles                    |      56.2% |      66.7% |   0.67
+Commercial Vehicles                 | Agricultural, Commercial & Construction Vehicles |      44.4% |      66.7% |   0.67
+Depositories, Clearing Houses and Other Intermediaries | Capital Markets                |      49.1% |     100.0% |   0.67
+Exchange and Data Platform          | Capital Markets                |      49.1% |      66.7% |   0.67
+Road Transport                      | Transport Services             |      40.0% |      50.0% |   0.67
+Lubricants                          | Petroleum Products             |      43.8% |      50.0% |   0.67
+Asset Management Company            | Capital Markets                |      49.1% |      66.7% |   0.67
+Precious Metals                     | Non - Ferrous Metals           |      42.1% |      50.0% |   0.67
+Real Estate related services        | Realty                         |      39.4% |      60.0% |   0.60
+Printing & Publication              | Printing & Publication         |      83.3% |      83.3% |   0.60
+Software Products                   | IT - Software                  |      46.1% |      56.2% |   0.55
+Ratings                             | Capital Markets                |      49.1% |      50.0% |   0.50
+Zinc                                | Non - Ferrous Metals           |      42.1% |      50.0% |   0.50
+Print Media                         | Media                          |      50.0% |      50.0% |   0.50
+General Insurance                   | Insurance                      |      88.9% |      75.0% |   0.50
+Auto Dealer                         | Automobiles                    |      56.2% |      66.7% |   0.50
+Pharmaceuticals                     | Pharmaceuticals & Biotechnology |      57.0% |      58.1% |   0.46
+Ferro & Silica Manganese            | Ferrous Metals                 |      50.0% |      77.8% |   0.43
+Stationary                          | Household Products             |      42.9% |      50.0% |   0.40
+
+
+
+####################################################################################################
+ANALYSIS FOR REBALANCE DATE: 2024-11-15
+####################################################################################################
+
+Calculation Date: 2024-11-08
+Lookback Start : 2023-11-09
+
+Industry                            | Group                          | Grp Score  | Ind Score  | RSNP  
+----------------------------------------------------------------------------------------------------
+Tea & Coffee                        | Agricultural Food & other Products |      27.1% |      51.9% |   0.70
+Dyes And Pigments                   | Chemicals & Petrochemicals     |      38.5% |      63.6% |   0.64
+Household Appliances                | Consumer Durables              |      27.9% |      52.4% |   0.62
+Life Insurance                      | Insurance                      |      55.6% |      80.0% |   0.60
+Real Estate related services        | Realty                         |      22.7% |      60.0% |   0.60
+Trading - Textile Products          | Textiles & Apparels            |      33.0% |      77.8% |   0.60
+Pesticides & Agrochemicals          | Fertilizers & Agrochemicals    |      32.7% |      50.0% |   0.56
+LPG/CNG/PNG/LNG Supplier            | Gas                            |      33.3% |      50.0% |   0.50
+Printing Inks                       | Chemicals & Petrochemicals     |      38.5% |      50.0% |   0.50
+Printing & Publication              | Printing & Publication         |      50.0% |      50.0% |   0.40
+
+

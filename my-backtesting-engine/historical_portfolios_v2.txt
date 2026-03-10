@@ -1,0 +1,86 @@
+Loading price data from /Users/shubhrakasana/Desktop/oleander/olgo_mobile/repos/Backtest/precision-backtest-engine/database/price_data.parquet...
+Loaded 7105900 rows of data.
+
+============================================================
+REBALANCE REPORT: 2018-02-15
+============================================================
+        ISIN             Name              Industry                                            Group Weight
+INE423A01024    Adani Enterp.    Trading - Minerals                        Metals & Minerals Trading  6.67%
+INE042A01014   Escorts Kubota              Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE764D01017 VST Till. Tract.              Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE931S01010 Adani Energy Sol    Power Distribution                                            Power  6.67%
+INE646L01027 Interglobe Aviat               Airline                               Transport Services  6.67%
+INE285B01017         SpiceJet               Airline                               Transport Services  6.67%
+INE258A01024         BEML Ltd Construction Vehicles Agricultural, Commercial & Construction Vehicles  6.67%
+INE731H01025 Action Const.Eq. Construction Vehicles Agricultural, Commercial & Construction Vehicles  6.67%
+INE806C01018              TIL Construction Vehicles Agricultural, Commercial & Construction Vehicles  6.67%
+INE081A01020       Tata Steel          Iron & Steel                                   Ferrous Metals  6.67%
+INE019A01038        JSW Steel          Iron & Steel                                   Ferrous Metals  6.67%
+INE114A01011          S A I L          Iron & Steel                                   Ferrous Metals  6.67%
+INE760A01029    Kokuyo Camlin            Stationary                               Household Products  6.67%
+INE480S01026      Gala Global            Stationary                               Household Products  6.67%
+INE802B01027             Linc            Stationary                               Household Products  6.67%
+Total Stocks: 15
+
+============================================================
+REBALANCE REPORT: 2020-08-14
+============================================================
+        ISIN             Name                    Industry                                            Group Weight
+INE809I01019  OnMobile Global Web based media and service                                            Media  6.67%
+INE022Q01020 Indian Energy Ex  Exchange and Data Platform                                  Capital Markets  6.67%
+INE118H01025              BSE  Exchange and Data Platform                                  Capital Markets  6.67%
+INE745G01043 Multi Comm. Exc.  Exchange and Data Platform                                  Capital Markets  6.67%
+INE042A01014   Escorts Kubota                    Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE764D01017 VST Till. Tract.                    Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE884B01025    Kirl. Ferrous                    Pig Iron                                   Ferrous Metals  6.67%
+INE127D01025         HDFC AMC    Asset Management Company                                  Capital Markets  6.67%
+INE298J01013 Nippon Life Ind.    Asset Management Company                                  Capital Markets  6.67%
+INE192A01025    Tata Consumer                Tea & Coffee               Agricultural Food & other Products  6.67%
+INE421D01022     CCL Products                Tea & Coffee               Agricultural Food & other Products  6.67%
+INE449C01025 Andrew Yule & Co                Tea & Coffee               Agricultural Food & other Products  6.67%
+INE683C01011   Maithan Alloys    Ferro & Silica Manganese                                   Ferrous Metals  6.67%
+INE919H01018    Indian Metals    Ferro & Silica Manganese                                   Ferrous Metals  6.67%
+INE060A01024  Navneet Educat.      Printing & Publication                           Printing & Publication  6.67%
+Total Stocks: 15
+
+============================================================
+REBALANCE REPORT: 2025-08-14
+============================================================
+        ISIN             Name                                    Industry                                            Group Weight
+INE804L01022   Medplus Health                             Pharmacy Retail                                        Retailing  6.67%
+INE010601016 Entero Healthcar                             Pharmacy Retail                                        Retailing  6.67%
+INE919H01018    Indian Metals                    Ferro & Silica Manganese                                   Ferrous Metals  6.67%
+INE683C01011   Maithan Alloys                    Ferro & Silica Manganese                                   Ferrous Metals  6.67%
+INE429E01023     Safari Inds.                 Plastic Products - Consumer                                Consumer Durables  6.67%
+INE054A01027      V I P Inds.                 Plastic Products - Consumer                                Consumer Durables  6.67%
+INE042A01014   Escorts Kubota                                    Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE764D01017 VST Till. Tract.                                    Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE398R01022    Syngene Intl. Healthcare Research, Analytics & Technology                              Healthcare Services  6.67%
+INE065X01017         Indegene Healthcare Research, Analytics & Technology                              Healthcare Services  6.67%
+INE495B01038 Suven Life Scie. Healthcare Research, Analytics & Technology                              Healthcare Services  6.67%
+INE196A01026           Marico                                  Edible Oil               Agricultural Food & other Products  6.67%
+INE619A01035  Patanjali Foods                                  Edible Oil               Agricultural Food & other Products  6.67%
+INE314T01033       Gokul Agro                                  Edible Oil               Agricultural Food & other Products  6.67%
+INE0LMW01024      Cello World                                   Houseware                                Consumer Durables  6.67%
+Total Stocks: 15
+
+============================================================
+REBALANCE REPORT: 2025-11-14
+============================================================
+        ISIN             Name            Industry                                            Group Weight
+INE042A01014   Escorts Kubota            Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE764D01017 VST Till. Tract.            Tractors Agricultural, Commercial & Construction Vehicles  6.67%
+INE040A01034        HDFC Bank Private Sector Bank                                            Banks  6.67%
+INE090A01021       ICICI Bank Private Sector Bank                                            Banks  6.67%
+INE238A01034        Axis Bank Private Sector Bank                                            Banks  6.67%
+INE666D01022   Borosil Renew.  Glass - Industrial                              Industrial Products  6.67%
+INE208A01029    Ashok Leyland Commercial Vehicles Agricultural, Commercial & Construction Vehicles  6.67%
+INE294B01019     SML Mahindra Commercial Vehicles Agricultural, Commercial & Construction Vehicles  6.67%
+INE062A01020              SBI  Public Sector Bank                                            Banks  6.67%
+INE028A01039   Bank of Baroda  Public Sector Bank                                            Banks  6.67%
+INE160A01022 Punjab Natl.Bank  Public Sector Bank                                            Banks  6.67%
+INE850D01014   Godrej Agrovet         Animal Feed                                    Food Products  6.67%
+INE871C01038     Avanti Feeds         Animal Feed                                    Food Products  6.67%
+INE880L01014            KIOCL         Sponge Iron                                   Ferrous Metals  6.67%
+INE169A01031 Coromandel Inter         Fertilizers                      Fertilizers & Agrochemicals  6.67%
+Total Stocks: 15
