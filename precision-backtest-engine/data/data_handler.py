@@ -61,14 +61,16 @@ class DataHandler:
         self.top_1000_bench = pd.read_parquet(benchmark_dir / "Benchmark_1000_equalWeight.parquet")
         self.top_1000_bench['date'] = pd.to_datetime(self.top_1000_bench['date'])
         
-        # Load NIFTY 500
+        # Load all Dhan indices
+        self.indices_bench: Dict[str, pd.DataFrame] = {}
         indices_path = self.price_path.parent / "indices_data.parquet"
         if indices_path.exists():
             df_idx = pd.read_parquet(indices_path)
-            n500 = df_idx[df_idx['index_name'] == 'NIFTY 500'].copy()
-            n500 = n500.rename(columns={'close': 'index_value'})
-            n500['date'] = pd.to_datetime(n500['date'])
-            self.nifty_500_bench = n500
+            df_idx['date'] = pd.to_datetime(df_idx['date'])
+            for name, sub in df_idx.groupby('index_name'):
+                s = sub.rename(columns={'close': 'index_value'}).sort_values('date').reset_index(drop=True)
+                self.indices_bench[name] = s
+            self.nifty_500_bench = self.indices_bench.get('NIFTY 500')
         else:
             self.nifty_500_bench = None
 

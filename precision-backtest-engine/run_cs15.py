@@ -1,4 +1,5 @@
 
+import sys
 import pandas as pd
 from pathlib import Path
 from data.data_handler import DataHandler
@@ -8,14 +9,14 @@ from engine.sim_engine import SimEngine
 from strategies.cs15_strategy import CS15Strategy
 from utils.analytics import calculate_metrics
 
-def run_cs15():
-    repo_root = Path("/Users/shubhrakasana/Desktop/oleander/olgo_mobile/repos/Backtest/precision-backtest-engine")
+def run_cs15(rsnp_benchmark: str = 'top_1000'):
+    repo_root = Path(__file__).parent
     dh = DataHandler(repo_root / "database/price_data.parquet")
     dh.load_data()
     dh.load_benchmarks(repo_root / "benchmarks")
-    
+
     start_date = "2017-05-15"
-    end_date = "2026-03-06"
+    end_date = "2026-05-15"
     
     all_dates = dh.get_all_dates()
     rdates = []
@@ -28,8 +29,10 @@ def run_cs15():
             if v: rdates.append(max(v))
     rdates = sorted(list(set([d for d in rdates if d >= pd.Timestamp(start_date)])))
 
+    print(f"\nRSNP Benchmark: {rsnp_benchmark}")
+
     # 1. Setup Strategy
-    strategy = CS15Strategy(dh)
+    strategy = CS15Strategy(dh, rsnp_benchmark=rsnp_benchmark)
     strategy.precompute_rsi(rdates)
     
     # 2. Setup Simulation (Rule 7 Costs/Taxes)
@@ -57,7 +60,8 @@ def run_cs15():
     print("="*40)
     
     # Save NAV for comparison later if needed
-    nav_df.to_csv(repo_root / "cs15_nav.csv", index=False)
+    suffix = f"_{rsnp_benchmark}"
+    nav_df.to_csv(repo_root / f"cs15_nav{suffix}.csv", index=False)
     
     # Export current portfolio
     pos_list = []
@@ -73,7 +77,7 @@ def run_cs15():
                 'entry_date': first_entry_date
             })
     df_pos = pd.DataFrame(pos_list)
-    stats_df = pd.read_csv(repo_root / "database/stock_statistics.csv")
+    stats_df = pd.read_parquet(repo_root / "database/stock_statistics.parquet")
     df_pos = pd.merge(df_pos, stats_df[['isin', 'company_name']], on='isin', how='left')
     
     latest_date_str = pd.Timestamp(end_date)
@@ -86,15 +90,18 @@ def run_cs15():
         prices = p_df.set_index('isin')['close']
         df_pos['current_price'] = df_pos['isin'].map(prices)
         df_pos['current_value'] = df_pos['shares'] * df_pos['current_price']
-        total_val = df_pos['current_value'].sum()
-        df_pos['weight_pct'] = (df_pos['current_value'] / total_val) * 100
+        total_nav = df_pos['current_value'].sum() + portfolio.cash
+        df_pos['weight_pct'] = (df_pos['current_value'] / total_nav) * 100
         df_pos['profit_pct'] = (df_pos['current_price'] / df_pos['entry_price'] - 1) * 100
-        
+        cash_pct = (portfolio.cash / total_nav) * 100
+
         df_pos = df_pos.sort_values('weight_pct', ascending=False)
-        print(f"\nPortfolio as of {last_dt.date()}:")
+        print(f"\nPortfolio as of {last_dt.date()} (NAV={total_nav:,.0f}):")
         print(df_pos[['company_name', 'isin', 'weight_pct', 'profit_pct', 'entry_date']].to_string(index=False))
-        df_pos.to_csv(repo_root / "cs15_portfolio_latest.csv", index=False)
-        print("\nPortfolio saved to cs15_portfolio_latest.csv")
+        print(f"{'Cash':>16}                          {cash_pct:.2f}")
+        df_pos.to_csv(repo_root / f"cs15_portfolio_latest{suffix}.csv", index=False)
+        print(f"\nPortfolio saved to cs15_portfolio_latest{suffix}.csv")
 
 if __name__ == "__main__":
-    run_cs15()
+    benchmark = sys.argv[1] if len(sys.argv) > 1 else 'top_1000'
+    run_cs15(rsnp_benchmark=benchmark)

@@ -45,7 +45,7 @@ def run_frictionless_benchmark():
     dh.load_data()
     dh.load_benchmarks(repo_root / "benchmarks")
     
-    start_date, end_date = "2017-05-15", "2026-02-05"
+    start_date, end_date = "2017-05-15", "2026-05-13"
     all_dates = dh.get_all_dates()
     rebalance_dates = []
     
@@ -81,7 +81,21 @@ def run_frictionless_benchmark():
     
     nav_df = pd.DataFrame(port.nav_history)
     nav_df.to_csv(repo_root / "outputs/top1000_frictionless_nav.csv", index=False)
-    
+
+    # Build benchmark parquet (index_value = NAV normalised to start at 1)
+    bench_df = nav_df[['date', 'nav']].copy()
+    bench_df['date'] = pd.to_datetime(bench_df['date'])
+    bench_df = bench_df.sort_values('date').reset_index(drop=True)
+    base = bench_df['nav'].iloc[0]
+    bench_df['index_value'] = bench_df['nav'] / base * 1000   # start at 1000
+    bench_df['daily_return'] = bench_df['nav'].pct_change().fillna(0)
+    bench_df['cumulative_return'] = (bench_df['nav'] / base - 1) * 100
+    bench_df['num_stocks'] = 1000
+    bench_df = bench_df[['date', 'index_value', 'num_stocks', 'daily_return', 'cumulative_return']]
+    bench_df.to_parquet(repo_root / "benchmarks/Benchmark_1000_equalWeight.parquet", index=False)
+    bench_df.to_parquet(repo_root / f"benchmarks/benchmark_top1000_equal_weight_2016-02-01_to_2026-05-13.parquet", index=False)
+    print(f"Benchmark parquet saved: {len(bench_df)} rows, {bench_df['date'].min().date()} to {bench_df['date'].max().date()}")
+
     stats = calculate_metrics(nav_df)
     
     print("\n" + "="*60)

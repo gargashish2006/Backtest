@@ -25,7 +25,8 @@ class CS15Strategy:
                  rsnp_benchmark: str = 'top_1000',
                  rsi_threshold: float = 40,
                  max_weight_per_stock: float = 0.10,
-                 shareholder_lookback_quarters: int = 4):
+                 shareholder_lookback_quarters: int = 4,
+                 min_industry_stocks: int = 1):
         self.dh = data_handler
         self.num_stocks = num_stocks
         self.max_per_industry = max_per_industry
@@ -38,6 +39,7 @@ class CS15Strategy:
         self.rsi_threshold = rsi_threshold
         self.max_weight_per_stock = max_weight_per_stock
         self.shareholder_lookback_quarters = shareholder_lookback_quarters
+        self.min_industry_stocks = min_industry_stocks
         
         # Caches
         self.rsi_cache = pd.DataFrame()
@@ -103,8 +105,10 @@ class CS15Strategy:
             b_prices = self.dh.nifty_500_bench
         elif self.rsnp_benchmark == 'top_100':
             b_prices = self.dh.top_100_bench
-        else:
+        elif self.rsnp_benchmark == 'top_1000':
             b_prices = self.dh.top_1000_bench
+        else:
+            b_prices = getattr(self.dh, 'indices_bench', {}).get(self.rsnp_benchmark)
             
         if b_prices is None or b_prices.empty:
             print(f"WARNING: Benchmark {self.rsnp_benchmark} not loaded.")
@@ -135,7 +139,7 @@ class CS15Strategy:
                 if c1 and c0 and c0 > 0:
                     total += 1
                     if (c1/c0 - 1) > bench_return: wins += 1
-            if total > 0: industry_rsnp.append({'industry': ind, 'rsnp': wins/total})
+            if total >= self.min_industry_stocks: industry_rsnp.append({'industry': ind, 'rsnp': wins/total})
             
         if not industry_rsnp: return {}
         ind_ranked = pd.DataFrame(industry_rsnp)

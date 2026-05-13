@@ -14,7 +14,7 @@ class ScreenerSHPScraper:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         })
-        self.target_quarters = ['Jun 2025', 'Sep 2025', 'Dec 2025']
+        self.target_quarters = ['Dec 2025', 'Mar 2026']
 
     def scrape_company(self, code, retries=3):
         url = f"https://www.screener.in/company/{code}/"
@@ -85,15 +85,18 @@ class ScreenerSHPScraper:
         
         to_scrape = {} # code -> isin -> quarters
         for file_path in input_json_files:
-            file_name = str(file_path)
-            q_label = 'Dec 2025' if 'Dec_2025' in file_name else ('Sep 2025' if 'Sep_2025' in file_name else 'Jun 2025')
             with open(file_path) as f:
                 data = json.load(f)
-                for stock in data['stocks']:
-                    code, isin = stock['bse_code'], stock['isin']
-                    if f"{isin}_{q_label.replace(' ', '-')}" in existing_keys: continue
-                    if code not in to_scrape: to_scrape[code] = {'isin': isin, 'quarters': []}
-                    if q_label not in to_scrape[code]['quarters']: to_scrape[code]['quarters'].append(q_label)
+            q_label = data.get('quarter', '')
+            if not q_label:
+                file_name = str(file_path)
+                if 'Mar_2026' in file_name: q_label = 'Mar 2026'
+                elif 'Dec_2025' in file_name: q_label = 'Dec 2025'
+            for stock in data['stocks']:
+                code, isin = stock['bse_code'], stock['isin']
+                if f"{isin}_{q_label.replace(' ', '-')}" in existing_keys: continue
+                if code not in to_scrape: to_scrape[code] = {'isin': isin, 'quarters': []}
+                if q_label not in to_scrape[code]['quarters']: to_scrape[code]['quarters'].append(q_label)
         
         print(f"Total entries already scraped: {len(existing_keys)}")
         print(f"Total unique stocks left to scrape: {len(to_scrape)}")
@@ -148,15 +151,14 @@ def apply_fixes():
     if not fix_file.exists():
         print("No fix file found.")
         return
-    
+
     fixes = pd.read_csv(fix_file)
-    sh_file = REPO_ROOT / 'database/shareholding_patterns.csv'
-    sh = pd.read_csv(sh_file)
-    
+    sh_parquet = REPO_ROOT / 'database/shareholding_patterns.parquet'
+    sh = pd.read_parquet(sh_parquet)
+
     # Load master identifiers for name mapping
-    mi_file = REPO_ROOT / 'database/master_identifiers.csv'
-    mi = pd.read_csv(mi_file)
-    isin_to_name = mi.set_index('isin')['company_name'].to_dict()
+    mi = pd.read_parquet(REPO_ROOT / 'database/master_identifiers.parquet')
+    isin_to_name = mi.drop_duplicates('isin').set_index('isin')['company_name'].to_dict()
 
     updated_count = 0
     added_count = 0
@@ -196,8 +198,7 @@ def apply_fixes():
     if new_rows:
         sh = pd.concat([sh, pd.DataFrame(new_rows)], ignore_index=True)
 
-    sh.to_csv(sh_file, index=False)
-    sh.to_parquet(sh_file.with_suffix('.parquet'), index=False)
+    sh.to_parquet(sh_parquet, index=False)
     print(f"Updated {updated_count} rows and added {added_count} new rows in shareholding database.")
 
 if __name__ == "__main__":
@@ -208,8 +209,7 @@ if __name__ == "__main__":
         apply_fixes()
     else:
         scraper.run([
-            REPO_ROOT / 'database/bse_remaining_Jun_2025.json',
-            REPO_ROOT / 'database/bse_remaining_Sep_2025.json',
-            REPO_ROOT / 'database/bse_missing_Dec_2025.json'
-        ])
+            REPO_ROOT / 'database/bse_missing_Dec_2025_v2.json',
+            REPO_ROOT / 'database/bse_missing_Mar_2026.json',
+        ], max_workers=3)
         apply_fixes()
