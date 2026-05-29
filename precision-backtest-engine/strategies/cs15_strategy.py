@@ -22,7 +22,7 @@ class CS15Strategy:
                  industry_group_top_pct: float = 0.50,
                  industry_decrease_min_pct: float = 0.50,
                  rsnp_threshold: float = 0.40,
-                 rsnp_benchmark: str = 'top_1000',
+                 rsnp_benchmark: str = 'nifty_500',
                  rsi_threshold: float = 40,
                  max_weight_per_stock: float = 0.10,
                  shareholder_lookback_quarters: int = 4,

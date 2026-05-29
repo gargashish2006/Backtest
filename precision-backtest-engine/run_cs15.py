@@ -103,5 +103,5 @@ def run_cs15(rsnp_benchmark: str = 'top_1000'):
         print(f"\nPortfolio saved to cs15_portfolio_latest{suffix}.csv")
 
 if __name__ == "__main__":
-    benchmark = sys.argv[1] if len(sys.argv) > 1 else 'top_1000'
+    benchmark = sys.argv[1] if len(sys.argv) > 1 else 'nifty_500'
     run_cs15(rsnp_benchmark=benchmark)

@@ -62,3 +62,7 @@ brain/
 task.md
 implementation_plan*.md
 walkthrough.md
+
+# git-lfs internals that leaked into the working tree
+/hooks/
+/lfs/
